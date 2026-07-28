@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/constants/app_colors.dart';
 import 'package:flutter_todo_app/constants/app_string.dart';
+import 'package:flutter_todo_app/screens/sign_up_screen.dart';
 import 'package:flutter_todo_app/widgets/common/app_background.dart';
 
 
@@ -22,7 +23,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 50),
                 Text(
-                  AppString.WelcomeTitle,
+                  AppString.welcomeTitle,
                   style: TextStyle(
                     fontSize: 25,
                     fontWeight: FontWeight.bold,
@@ -30,7 +31,7 @@ class WelcomeScreen extends StatelessWidget {
                 ),
                 const SizedBox(height: 25),
                 Text(
-                  AppString.WelcomeDescription,             
+                  AppString.welcomeDescription,             
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 15, 
@@ -44,7 +45,14 @@ class WelcomeScreen extends StatelessWidget {
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 0),
                   ),
-                  onPressed:() {}, 
+                  onPressed:() {
+                    Navigator.push(
+                      context, 
+                      MaterialPageRoute(
+                        builder: (context)=> const SignUpScreen(),
+                      ),
+                    );
+                  }, 
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
