@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/constants/app_colors.dart';
 import 'package:flutter_todo_app/constants/app_string.dart';
-import 'package:flutter_todo_app/screens/welcome_screen.dart';
 import 'package:flutter_todo_app/widgets/common/app_background.dart';
 
 class SignUpScreen extends StatelessWidget {
@@ -20,12 +19,9 @@ class SignUpScreen extends StatelessWidget {
                   alignment: Alignment.topLeft,
                   child: IconButton(
                     onPressed:(){
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context)=>WelcomeScreen()),
-                      );
+                      Navigator.pop(context);
                     },
-                    icon:Icon(
+                    icon:const Icon(
                       Icons.arrow_circle_left_outlined,
                      ),
                     ),
