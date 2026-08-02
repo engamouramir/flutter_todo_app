@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/constants/app_colors.dart';
+import 'package:flutter_todo_app/screens/home_screen.dart';
 import 'package:flutter_todo_app/screens/sign_up_screen.dart';
 import 'package:flutter_todo_app/widgets/common/app_background.dart';
 
@@ -61,7 +62,7 @@ class SignInScreen extends StatelessWidget {
                                       const SizedBox(height: 10,),
                                       Padding(
                                         padding: const EdgeInsets.all(10),
-                                        child: TextField(
+                                         child: TextField(
                                           decoration: InputDecoration(
                                               hintText: "Enter your password",
                                               filled: true,
@@ -92,7 +93,7 @@ class SignInScreen extends StatelessWidget {
                                             Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
-                                                    builder: (context)=>SignUpScreen(),
+                                                    builder: (context)=>HomeScreen(),
                                                 ),
                                             );
                                         },

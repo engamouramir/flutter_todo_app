@@ -20,35 +20,75 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: AppBackground(
-        child: SingleChildScrollView(
-          child: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.all(24),
-              child: Column(
-                children: [
-                  Image.asset("assets/images/home.png"),
-                  const SizedBox(height: 15,),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      const Text(
-                        "Todo Tasks",
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 20,
-                        ),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.all(24),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    SizedBox(width: 90,),
+                    Image.asset("assets/images/Home.png"),
+                  ],
+                ),
+                const SizedBox(height: 15,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    const Text(
+                      "Todo Tasks.",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 30,
                       ),
-                    ],
+                    ),
+                  ],
+                ),
+                const SizedBox(height: 16,),
+                Expanded(
+                  child: Container(
+                    margin: const EdgeInsets.all(12),
+                    padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 16),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(60),
+                    ),
+                    child: ListView.builder(
+                      itemCount: todos.length,
+                      itemBuilder: (context, index) {
+                        final todo = todos[index];
+                      
+                        return  Row(
+                          children: [
+                            Checkbox(
+                              value: todo.isCompleted,
+                              onChanged: (value) {
+                                setState(() {
+                                  todo.isCompleted = value!;
+                                });
+                              }
+                            ),
+                            const SizedBox(width: 10,),
+                            Text(
+                              todo.title,
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontSize: 16,
+                                decoration: todo.isCompleted ? TextDecoration.lineThrough : TextDecoration.none,
+                              ),
+                            ),
+                          ],
+                        );
+                    },
                   ),
-                  const SizedBox(height: 15,),
-                  
-                ],
-              ), 
-            ),
+                ), 
+              ),
+            ],
           ),
         ), 
       ),
+    ),
     );
   }
 }
