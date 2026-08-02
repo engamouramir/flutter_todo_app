@@ -6,4 +6,6 @@ class AppString {
   static const getStarted = "Get Started";
 
   static const welcomeSignUp = "Welcome Onboard!";
+
+  static const signUp = "Sign Up";
 }

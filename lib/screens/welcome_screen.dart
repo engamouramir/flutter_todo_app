@@ -43,7 +43,6 @@ class WelcomeScreen extends StatelessWidget {
                     backgroundColor: AppColors.primary,
                     fixedSize: Size(200, 50),
                     foregroundColor: Colors.white,
-                    padding: const EdgeInsets.symmetric(vertical: 0,horizontal: 0),
                   ),
                   onPressed:() {
                     Navigator.push(
@@ -54,7 +53,7 @@ class WelcomeScreen extends StatelessWidget {
                     );
                   }, 
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
                         AppString.getStarted,  

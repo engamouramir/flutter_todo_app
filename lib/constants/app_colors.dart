@@ -6,4 +6,5 @@ class AppColors {
   static const primary = Color(0xFF5A877D);
 
   static const topCircleColor = Color(0xFFAABFBA);
+
 }
