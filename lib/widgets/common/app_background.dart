@@ -4,10 +4,7 @@ import 'package:flutter_todo_app/constants/app_colors.dart';
 class AppBackground extends StatelessWidget {
   final Widget child;
 
-  const AppBackground ({
-    super.key,
-    required this.child,
-    });
+  const AppBackground({super.key, required this.child});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +32,7 @@ class AppBackground extends StatelessWidget {
               color: AppColors.topCircleColor.withValues(alpha: 0.6),
               shape: BoxShape.circle,
             ),
-          ) 
+          ),
         ),
         child,
       ],

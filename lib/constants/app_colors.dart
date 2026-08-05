@@ -7,4 +7,6 @@ class AppColors {
 
   static const topCircleColor = Color(0xFFAABFBA);
 
+  static const homeSapeColor = Color(0xFF70978F);
+
 }
