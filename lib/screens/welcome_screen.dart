@@ -4,38 +4,30 @@ import 'package:flutter_todo_app/constants/app_string.dart';
 import 'package:flutter_todo_app/screens/sign_up_screen.dart';
 import 'package:flutter_todo_app/widgets/common/app_background.dart';
 
-
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: AppBackground( 
-      child :SafeArea(
+      body: AppBackground(
+        child: SafeArea(
           child: Padding(
             padding: const EdgeInsets.all(24),
             child: Column(
               children: [
                 SizedBox(height: 100),
-                Image.asset(
-                  "assets/images/Welcome.png"
-                ),
+                Image.asset("assets/images/Welcome.png"),
                 SizedBox(height: 50),
                 Text(
                   AppString.welcomeTitle,
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                  ),
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 25),
                 Text(
-                  AppString.welcomeDescription,             
+                  AppString.welcomeDescription,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 15, 
-                  ),  
+                  style: TextStyle(fontSize: 15),
                 ),
                 Spacer(),
                 ElevatedButton(
@@ -44,19 +36,19 @@ class WelcomeScreen extends StatelessWidget {
                     fixedSize: Size(200, 50),
                     foregroundColor: Colors.white,
                   ),
-                  onPressed:() {
+                  onPressed: () {
                     Navigator.push(
-                      context, 
+                      context,
                       MaterialPageRoute(
-                        builder: (context)=> const SignUpScreen(),
+                        builder: (context) => const SignUpScreen(),
                       ),
                     );
-                  }, 
+                  },
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       const Text(
-                        AppString.getStarted,  
+                        AppString.getStarted,
                         style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 15,
@@ -68,9 +60,9 @@ class WelcomeScreen extends StatelessWidget {
                 const SizedBox(height: 20),
               ],
             ),
-          ), 
+          ),
         ),
-      ),  
+      ),
     );
   }
 }
